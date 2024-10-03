@@ -19,25 +19,25 @@ In today's business world, keeping top talent is a critical challenge. Employee 
 We'll be focusing on key areas such as overtime, travel, job satisfaction, and other factors that could be contributing to employee attrition. By breaking down these factors and analyzing the attrition rates tied to each one, we aim to uncover patterns that can help us understand why people are leaving. The goal is not just to look at the data, but also to predict future attrition by developing a model that can help the company take proactive steps to retain their employees.
 ## Analyzing all the factors
 ### Personal and Education Factors
-![[Personal and Education.png]]
+![Personal and Education.png](https://github.com/RHardiyanto1/hr-attrition-project/blob/main/images/Personal%20and%20Education.png?raw=true)
 
 When it comes to personal and education factors, there wasn't much difference in attrition cases between genders, so that's not a major driver here. However, the type of degree and employee has might play a role, though this could be more about the department they end up working in rather than the degree itself causing the higher attrition rates, which we will dig into later in the report. As for education levels, which are ranked from 1 to 5 (with 1 being less than a college degree and 5 being a doctorate), the attrition rates for levels 1 through 4 are similar, but those with doctorates (5) had a much lower attrition rate. It might indicate that those with doctorates are more invested with their careers, and less likely to jump ship.
 
 Interestingly, relationship status seemed to matter, single employees and those with the lowest relationship satisfaction scores show much higher attrition rates. This can mean that personal dissatisfaction can spill into their work life. Also, maybe single employees are less tied down by obligations, making them easier to leave.
 ### Travel and Commutes
-![[Travel.png]]
+![Travel.png](https://github.com/RHardiyanto1/hr-attrition-project/blob/main/images/Travel.png?raw=true)
 
 Business travel seems to play a significant role in employee attrition. Employees who don't travel have the lowest attrition rates, while those who travel occasionally ('Rarely_Travel') show a much higher attrition rate. The real standout is those who travel frequently, in which makes up almost a fourth of all employees that leave the company. It's pretty clear that frequent travel is a major factor in pushing people out the door. Even those that travel occasionally have a noticeable higher attrition, but it's the frequent travelers that are at risk. This suggests that the stress or disruption of travel, whether from work-life balance issues or just the fatigue of constant movements, plays a big role in employee attrition.
 
 As for distance from home, the data is split into five quantiles, and there's a steady increase in employee attrition as employees live further from the workplace. Those in the bottom fifth (closest to work) are the least likely to leave, while those in the top fifth (furthest from work) have the highest attrition rates. The increase in attrition with distance from home shows that a long commute should not be underestimated, as it too can affect work life balance by acting as a time drain.
 ### Department and Job Roles
-![[Department and Job Roles.png]]
+![Department and Job Roles.png](https://github.com/RHardiyanto1/hr-attrition-project/blob/main/images/Department%20and%20Job%20Roles.png?raw=true)
 
 Looking at the data by department, Research & Development (R&D) has the lowest attrition rates, while HR and Sales departments have much higher turnover. This pattern carries through to specific job roles—sales representatives stand out with an almost 40% attrition rate, making them the most likely to leave. Close behind are employees in human resources and laboratory assistants, with research scientists and sales executives rounding out the top spots for higher attrition.
 
 Job involvement and job level also play a big part here. Employees at the lower end of both tend to leave at higher rates compared to those with higher involvement or at a more senior job level. Interestingly, despite R&D having a lower overall attrition rate as a department, lab assistants and research scientists still face higher attrition than their department's average, likely due to their lower job involvement or level compared to others in the department.
 ### Age and Experience
-![[Age and Experience.png]]
+![Age and Experience.png](https://github.com/RHardiyanto1/hr-attrition-project/blob/main/images/Age%20and%20Experience.png)
 
 When it comes to age, there’s a clear pattern, the younger an employee is, the more likely they are to leave. It seems like the younger workforce is more restless or looking for better opportunities. Looking at experience, the number of other companies an employee has worked for also impacts attrition. Those who’ve worked for 5-9 companies are much more likely to leave, but there’s an odd spike for employees who’ve only worked for one other company as well. Meanwhile, those with 0 or 3-4 other companies under their belt have lower attrition rates.
 
@@ -47,7 +47,7 @@ Even though years since the last promotion doesn’t have a huge impact, there�
 
 Lastly, training and work-life balance play roles too. Employees who received no training are more likely to leave compared to those who did, and those with poor work-life balance (rated the lowest) have an attrition rate of over 30%.
 ### Income
-![[Income.png]]
+![Income.png](https://github.com/RHardiyanto1/hr-attrition-project/blob/main/images/Income.png)
 
 People always look to earn the most money, and the pattern shows here with the lowest income quantile show an attrition rate of over 30%, while it drops by half in the second and continues to lower, though less dramatically as income increases.
 
@@ -55,7 +55,7 @@ But salary hikes seem to not be the solution, as they don't have much of an impa
 
 Stock option levels show that employees without any stock options are more likely to leave compared those with levels 1-3. However, stock option level 3 has a higher attrition rate than 1-2, meaning more stock options don't always guarantee retention.
 ### Satisfaction
-![[Satisfaction.png]]
+![Satisfaction.png](https://github.com/RHardiyanto1/hr-attrition-project/blob/main/images/Satisfaction.png?raw=true)
 Both environmental and job satisfaction plays a role in employee attrition. Employees who report the lowest satisfaction levels are more likely to leave compared to those who are more satisfied with their job and work environment. It’s clear that dissatisfaction, either professionally or personally (relationship satisfaction), in any form, is a indicator of potential turnover.
 
 Overtime is another major factor. Employees who are regularly working overtime are three times more likely to leave, with an attrition rate of around 30%, compared to just 10% for those who don’t work overtime. Clearly, the extra hours are taking their toll.
@@ -65,13 +65,14 @@ Overtime is another major factor. Employees who are regularly working overtime a
 
 We created a HR dashboard, using PowerBI to help give us an overview of the company.
 
-![[Department Dashboard.png]]
+![Department Dashboard](https://github.com/user-attachments/assets/2ed94969-3670-4359-91d5-e876b0c37d79)
 
 The dashboard gives us a snapshot of the current workforce with key statistics, such as current employees, attrition rate, and the number of employees who have quit, or who are at risk. It also displays the average satisfaction levels.
 
-![[At Risk Dashboard.png]]
+![At Risk Dashboard](https://github.com/user-attachments/assets/cb2f62e3-99d5-455d-bda6-a56e4afb8818)
 
 The At Risk Employees section digs deeper into each individual employee data, including satisfaction, job role, income, overtime, and other relevant factors. In this example, we have an at risk employee that show low satisfaction across the board, which can signal HR to intervene try to prevent the employee from leaving.
+
 ### Model Performance and Interpretation
 
 The model, using XGBoost, we built to predict employee attrition has an AUCPR score of 0.5, which is higher than the actual attrition rate of 16%, showing that the model performs better than random guessing. While the model is quite accurate overall, especially in predicting those who will stay (93%), it's less reliable when it comes to predicting those who will leave. Specifically, it has a precision of 0.53 and a recall of 0.51 for those employees, meaning it can catch about half of them but also flags some false positives.
